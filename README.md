@@ -69,8 +69,8 @@ Location: KY 258
 
 And the TA, Javendeen Naipul's office hours are:
 
-Time: TBA
-Location: zoom
+Time: Thursdays 5:30-6:20PM
+Location: zoom (link on slack)
 
 
 ## Grades and Class Standing
