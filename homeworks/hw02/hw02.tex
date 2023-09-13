@@ -12,7 +12,7 @@
 \author{Professor Adam Kapelner} %STUDENTS: write your name here
 
 \iftoggle{professormode}{
-\date{Due by email 11:59PM September 18, \the\year{} \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+\date{Due by email 11:59PM September 20, \the\year{} \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
 }
 
 \renewcommand{\abstractname}{Instructions and Philosophy}
@@ -51,12 +51,11 @@ NAME: \line(1,0){380}
 \easysubproblem{Declare your $\alpha$ level desired for this test. You do not need to justify it. It is what you are comfortable with.}\spc{0}
 
 
-\intermediatesubproblem{Because we want to show something is greater than a point value, it is called a right-tailed test. In any test, we need to find the distribution (or approximate the distribution of) the estimator under the null hypothesis. Because we will reject on the right, why is the most conservative value of $\theta$ to choose when deriving the null sampling distribution to be largest value in the null hypothesis region (in this case $\theta = \theta_0 = 0.524$)?}\spc{3}
+\intermediatesubproblem{Because we want to show something is greater than a point value, it is called a right-tailed test. In any test, we need to find the distribution (or approximate the distribution of) the estimator under the null hypothesis. Because we will reject on the right, why is the most conservative value of $\theta$ to choose when deriving the null sampling distribution to be largest value in the null hypothesis region (in this case $\theta = \theta_0 = 0.524$)?}\spc{2.7}
 
-\easysubproblem{Regardless of if you understood the previous question or not, what is the exact null sampling distribution (write the PMF)? Marked easy because you can copy from MATH 340 class notes.}\spc{1}
+\easysubproblem{Regardless of if you understood the previous question or not, what is the exact null sampling distribution (write the PMF)? Marked easy because you can copy from MATH 340 class notes.}\spc{0.8}
 
-\easysubproblem{Draw the PMF of the null sampling distribution. Label all axes carefully and provide sufficient tick marks. Marked easy because you can copy from class. Probabilities are below rounded to the nearest 3 digits.}
-
+\easysubproblem{Draw the PMF of the null sampling distribution. Label all axes carefully and provide sufficient tick marks. Marked easy because you can copy from class. Probabilities are below rounded to the nearest 3 digits. Leave space below its horizontal axis.}
 
 \begin{table}[ht]
 \centering\small
@@ -84,13 +83,15 @@ NAME: \line(1,0){380}
 
 \easysubproblem{What is $\prob{\text{Type I error}}$ in this test with your level $\alpha$?}\spc{-0.5}
 
+\easysubproblem{What is the definition of the pval for this 2-sided test?}\spc{2}
+
 \easysubproblem{What is the p-value of the estimate in this test?}\spc{1}
 
 \easysubproblem{Assuming $\theta = 0.7$, what is the true sampling distribution? Write its PMF below.}\spc{3}
 
 \intermediatesubproblem{Calculate the $\prob{\text{Type II error}}$ in this test.}\spc{2}
 
-\easysubproblem{Easy only given the previous answer: calculate the power in this test.}\spc{1}
+\easysubproblem{Easy only if you have the answer to the previous question: calculate the power in this test.}\spc{1}
 
 \end{enumerate}
 
@@ -107,20 +108,172 @@ NAME: \line(1,0){380}
 
 \end{enumerate}
 
+\problem{We will revisit the concept of a degenerate point estimator as in the first problem but this time let the DGP be $\Xoneton \iid \normnot{\theta}{\sigsq}$ where $\sigsq$ is considered known. We are focused on point estimation for $\theta$ and the range of possible values is all numbers i.e. $\Theta = \reals$. Of course we use $\thetahat = \Xbar$. But we also consider the \qu{bad} point estimator $\thetahat_{\text{bad}} = 1$.}
 
-%\problem{Let $\Xoneton \iid \bernoulli{\theta}$, our DGP and we are focused on point estimation for $\theta$. We then choose the point estimator $\thetahat_{\text{bad}} = 0.1989$.}
-%
-%\begin{enumerate}
-%
-%\intermediatesubproblem{Graph the bias of $\thetahat_{\text{bad}}$ over all $\theta$. Label your axes.}\spc{4}
-%
-%\intermediatesubproblem{Graph the risk of $\thetahat_{\text{bad}}$ under squared error loss. Label your axes.}\spc{5}
-%
-%\hardsubproblem{Compare $\thetahat_{\text{bad}}$ to $\Xbar$ using the sup risk under squared error loss. How much better is $\Xbar$? With $n$ getting larger does it get even better?}\spc{4}
-%
-%\hardsubproblem{Assume that $\theta$ is drawn from $\Theta = [0, 1]$ uniformly. This breaks all of our rules about how $\theta$ is one fixed unknown value. But ignore that rule. This allows you to compare both MSE curves by computing $\int_0^1 MSE(\theta) d\theta$. How much better is $\Xbar$? With $n$ getting larger does it get even better?}\spc{7}
-%
-%\end{enumerate}
+\begin{enumerate}
+
+\intermediatesubproblem{Graph the bias of $\thetahat_{\text{bad}}$ over all $\theta$. Label your axes.}\spc{3}
+
+\intermediatesubproblem{Graph the risk of $\thetahat$ and $\thetahat_{\text{bad}}$ under squared error loss. Label your axes and provide appropriate tick marks on the axes.}\spc{4}
+
+\hardsubproblem{Compare $\thetahat_{\text{bad}}$ to $\thetahat$ using the sup risk under squared error loss. How much better is $\Xbar$?}\spc{3}
+\end{enumerate}
+
+\problem{We will now do a \emph{one-sided one-sample exact Z test} using the male student height data: $n=13$ and $\xbar = 68.85''$. We want to test at $\alpha = 1\%$ if the population that this sample was drawn from has a \emph{greater} mean than the American female height mean of 65''. According to \href{https://www.usablestats.com/lessons/normal}{this article}, female American height is $\iid \normnot{65}{3.5^2}$.}
+
+\begin{enumerate}
+
+\easysubproblem{Write the alternative and null hypotheses.}\spc{2}
+
+\easysubproblem{As we discussed in class, which value of $\theta_0$ do we use to generate the null sampling distribution?}\spc{-0.5}
+
+\hardsubproblem{Why do we use that value of $\theta_0$ when there are potentially infinite values to choose from?}\spc{2}
+
+\easysubproblem{Write the null sampling distribution on both the original scale (inches) and the standardized scale.}\spc{2}
+
+\easysubproblem{Write the RET region as a set on both the original scale (inches) and the standardized scale.}\spc{2}
+
+\easysubproblem{What is the $\prob{\text{Type I error}}$ in this test?}\spc{-0.5}
+
+\easysubproblem{Is it possible to calculate the $\prob{\text{Type II error}}$ of this test given the information you have? Yes / no}\spc{-0.5}
+\easysubproblem{Is it possible to calculate the power of this test given the information you have? Yes / no}\spc{-0.5}
+
+
+\easysubproblem{Calculate the test statistic on the standardized scale.}\spc{1}
+
+\easysubproblem{Run the test using both RET regions (the original scale and standardized scale). Show both answers are the same.}\spc{1}
+
+\easysubproblem{Calculate the p-val for this test. Use a z-calculator on your graphing calculate or find one on the Internet.}\spc{2}
+
+\easysubproblem{Was this an exact test? Yes / no}\spc{-0.5}
+\easysubproblem{Write a conclusion of this test in English.}\spc{2}
+
+\easysubproblem{Was this conclusion expected? Did you expect such a low/high p-val? Discuss.}\spc{2}
+
+
+\intermediatesubproblem{Find the power function for this test.}\spc{4}
+
+\easysubproblem{If $n \rightarrow \infty$, what does power converge to?}\spc{1}
+\end{enumerate}
+
+
+
+\problem{Assume male American height is $\iid \normnot{70}{4^2}$ and female American height is $\iid \normnot{65}{3.5^2}$. Using the male and female height data from class, we will now prove that the QC STEM 300-level population mean male height is greater than the QC STEM 300-level population mean female height.}
+
+\begin{enumerate}
+
+\intermediatesubproblem{Write the hypotheses, declare an $\alpha$ of your choosing, find the sampling distribution under $H_0$, find the RET region, run the test, calculate the p-val and provide a conclusion sentence.}\spc{8}
+
+
+\easysubproblem{Was this an exact test? Yes / no}\spc{0}
+\end{enumerate}
+
+
+
+\problem{These questions will be about the Method of Moments (MM) procedure for generating estimators/estimates.}
+
+\begin{enumerate}
+
+
+\easysubproblem{Define the $k$th moment of a rv.}\spc{0}
+
+\easysubproblem{For sample size $n$, define the of the $k$th sample moment \emph{estimator} of a rv.}\spc{1}
+
+\easysubproblem{For sample size $n$, define the of the $k$th sample moment \emph{estimate} of a rv.}\spc{1}
+
+\easysubproblem{Give an example of a DGP with two parameters.}\spc{1}
+
+\easysubproblem{For a DGP with $K=3$ parameters, write the system of equations that relates each moment to parameters. There should be 3 equations with 3 unknowns. Then write the system of equations that relates each parameter to moments. There should be another 3 equations with 3 unknowns. }\spc{2}
+
+\easysubproblem{For any iid DGP with finite mean, find an MM estimator for the mean.}\spc{2}
+
+\easysubproblem{For any iid DGP with finite variance, find an MM estimator for the variance.}\spc{5}
+
+\easysubproblem{Consider the $\Xoneton\iid \binomial{\theta_1}{\theta_2}$ DGP and derive the MM estimators $\thetahatmm_1$ and $\thetahatmm_2$ for $\theta_1$ and $\theta_2$ and express them in terms of $\Xbar$ and $\sigsqhat$.}\spc{10}
+
+\easysubproblem{Provide an example dataset (different from the one in class) where the MM estimates $\thetahathatmm_1$ and $\thetahathatmm_2$ in (h) are illegal and explain why they're illegal.}\spc{2}
+
+
+\intermediatesubproblem{Imagine you are a NYPD officer at precinct 100 in Queens. You want to estimates of  the number of crimes in your precinct and people's propensity to phone in crimes. The number of daily phone reports for two weeks are: 13, 21, 25, 21, 15, 19, 15, 15, 17, 23, 16, 15, 19, 15. Estimate the true mean number of daily total crimes in the precinct and probability of the crime being phoned in.}\spc{1}
+
+\hardsubproblem{What exactly what you need to know if you wanted to test if the true mean number of crimes daily exceeds 20? This is conceptual and should be answered with a sentence or two.}\spc{3}
+
+\intermediatesubproblem{Derive the MM estimator $\thetahatmm$ for $\theta$ in the $\Xoneton \iid \uniform{\theta}{17}$ DGP.}\spc{3}
+
+\easysubproblem{Provide an example dataset where the MM estimate $\thetahathatmm$ in the previous question is illegal and explain why it is illegal.}\spc{3}
+
+%set.seed(1984); paste0(round(runif(17,-10,20),1), collapse = ", ")
+\hardsubproblem{[MA] Derive the MM estimators $\thetahatmm_1$ and $\thetahatmm_2$ for the $\iid \uniform{\theta_1}{\theta_2}$ DGP. Then estimate $\theta_1$ and $\theta_2$ given the dataset 9.8, 3.1, 1.2, -0.1, 12.1, 15.9, -9, 3.4, 14.9, -3.6, 16.5, -9.6, 11.2, 11.6, -3.9, -9.3, -1 using these new MM estimators. Remember that $\theta_1$ is defined to be $< \theta_2$!}\spc{15}
+
+
+\end{enumerate}
 
 
 \end{document}
+
+
+
+
+%\intermediatesubproblem{Consider the DGP $\iid \betanot{\theta_1}{\theta_2}$. Below are some facts about this distribution that I took from \href{https://en.wikipedia.org/wiki/Beta_distribution}{wikipedia}:
+%
+%\beqn
+%X &\sim& \betanot{\theta_1}{\theta_2} := \underbrace{\oneover{B(\theta_1, \theta_2)} x^{\theta_1 - 1} (1-x)^{\theta_2-1}}_{f(x)} \\
+%\support{X} &=& [0,1], ~~\theta_1, \theta_2 \in (0, \infty) \\
+%\expe{X} &=&\int_0^{\infty} xf(x)dx = \frac{\theta_1}{\theta_1 + \theta_2}, \\
+%\var{X} &=&\int_0^{\infty} (x - \expe{X})^2f(x)dx = \frac{\theta_1 \theta_2}{(\theta_1 + \theta_2)^2 (\theta_1 + \theta_2 + 1)}
+%\eeqn
+%
+%Specify the two equations that relate moments to parameters, i.e. $\mu_1 = \alpha_1(\theta_1, \theta_2)$ and $\mu_2 = \alpha_2(\theta_1, \theta_2)$. Do not simplify.
+%}\spc{4}
+%
+%%set.seed(1984); paste0(round(rbeta(11,5,10),3), collapse = ", ")
+%\easysubproblem{You have two equations and two unknowns. It turns out after much algebra you can solve for the MM estimators in terms of $\Xbar$ and $\sigsqhat$ as:
+%
+%\beqn
+%\thetahatmm_1 = \xbar\parens{\frac{\Xbar (1-\Xbar)}{\sigsqhat} - 1},~~\thetahatmm_2 = (1 - \Xbar) \parens{\frac{\Xbar (1-\Xbar)}{\sigsqhat} - 1}
+%\eeqn
+%
+%Estimate $\theta_1$ and $\theta_2$ given the dataset 0.393, 0.29, 0.428, 0.117, 0.482, 0.524, 0.413, 0.226, 0.264, 0.567, 0.374.
+%}\spc{6}
+%
+%\intermediatesubproblem{Consider the DGP $\iid \gammanot{\theta_1}{\theta_2}$. Below are some facts about this distribution that I took from \href{https://en.wikipedia.org/wiki/Beta_distribution}{wikipedia}:
+%
+%\beqn
+%X &\sim& \gammanot{\theta_1}{\theta_2} := \underbrace{\frac{\theta_2^{\theta_1}}{\Gammaf{\theta_1}}x^{\theta_1 - 1} e^{-\theta_2 x}}_{f(x)} \\
+%\support{X} &=& [0, \infty), ~~\theta_1, \theta_2 \in (0, \infty) \\
+%\expe{X} &=&\int_0^{\infty} xf(x)dx = \frac{\theta_1}{\theta_2}, \\
+%\var{X} &=&\int_0^{\infty} (x - \expe{X})^2f(x)dx = \frac{\theta_1}{\theta_2^2}
+%\eeqn
+%
+%Specify the two equations that relate moments to parameters, i.e. $\mu_1 = \alpha_1(\theta_1, \theta_2)$ and $\mu_2 = \alpha_2(\theta_1, \theta_2)$ and then solve for the MM estimators $\thetahathatmm_1$ and $\thetahathatmm_2$ in terms of $\Xbar$ and $\sigsqhat$. Hint: leave expressions in terms of $\sigsqhat$.}\spc{4}
+%
+%%set.seed(1984); paste0(round(rgamma(7,5,10),3), collapse = ", ")
+%\easysubproblem{Provide point estimates $\thetahathat_1$ and $\thetahathat_2$ for the unknown parameters $\theta_1$ and $\theta_2$ given the dataset 10.8, 8.5, 13.2, 9.1, 13.5, 11.2, 7.1 for the $\iid \gammanot{\theta_1}{\theta_2}$ DGP.}\spc{3}
+%
+%
+%\hardsubproblem{In Math 241 you learned about expectation and variance where expectation was a measure of central tendency of a distribution and variance is a measure of dispersion around that central tendency. The next most important metric for rv's is probably its \emph{skewness} defined as
+%
+%\beqn
+%\gamma := \skewness{X} := \expe{\tothepow{\frac{X - \expe{X}}{\sd{X}}}{3}}
+%\eeqn
+%
+%where SD refers to standard deviation. Skewness is technically the third standardized moment since $\frac{X - \expe{X}}{\sd{X}}$ is the distribution standardized and then the third power is taken. Skewness is a metric of which tail of the distribution is longer and by how much as seen in this figure By \href{https://codeburst.io/2-important-statistics-terms-you-need-to-know-in-data-science-skewness-and-kurtosis-388fef94eeaa}{Diva Jain}.
+%
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=3in]{skew.png}
+%\end{figure}
+%
+%Since third powers are both positive and negative, skewness can be both positive and negative (and zero if the distribution is symmetric with right and left tails the same). 
+%
+%In class, when we were looking at the normal DGP, we derived nonparametric MM estimators $\Xbar$ and $\sigsqhat$ for the expectation and variance (nonparametric meaning that the derivation for them was for all DGP's). Show that the nonparametric MM estimator for skewness is:
+%
+%\beqn
+%\hat{\gamma} = \sqrt{n}\frac{\sum_{i=1}^n (X_i - \Xbar)^3
+%}{
+%\tothepow{\sum_{i=1}^n (X_i - \Xbar)^2}{3/2}
+%}
+%\eeqn
+%
+%Hint: assume a iid DGP with density / mass function $f(\theta_1, \theta_2, \theta_3)$ where $\theta_1$ is the expectation, $\theta_2$ is the variance and $\theta_3$ is the skewness.
+%}\spc{15}
