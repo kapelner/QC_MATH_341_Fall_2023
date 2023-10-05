@@ -168,11 +168,11 @@ The CRLB result is that any unbiased estimator must have variance at least equal
 
 \beqn
 R(\thetahatmle, \theta) = \expe{\abss{\thetahatmle - \theta}} 
-= \int_\reals \abss{\thetahathatmle - \theta} f_{\thetahatmle}(\thetahathat) d\thetahathat 
+= \sum_{\xbar \in \reals} \abss{\xbar - \theta} p_{\Xbar}(\xbar) 
 \approx \int_\reals |\xbar - \theta| \oneoversqrt{2\pi \theta / n} e^{-\oneover{2 \theta / n} (\xbar - \theta)^2} d\xbar 
 \eeqn
 
-The approximation follows from the CLT which inserts the density of $\normnot{\theta}{\theta / n}$ for the density of the maximum likelihood estimator.
+The approximation follows from the CLT which inserts the density of $\normnot{\theta}{\theta / n}$ for the density of the maximum likelihood estimator. Without this approximation, the true PMF of $\Xbar$ would need to be determined (which is actually possible, but is much more difficult).
 
 \color{black}
 
@@ -206,7 +206,7 @@ Since $\xbar = 19.3 \in RET \Rightarrow $ retain $H_0$. Conclusion: there is not
 Increase the sample size $n$.
 
 \color{black}
-\subquestionwithpoints{2} If $n$ was very, very large, would this test have been rejected given the same point estimate? Yes / \inblue{\underline{no}} \spc{-0.5}
+\subquestionwithpoints{2} If $n$ was very, very large, would this test have been rejected given the same point estimate? \inblue{\underline{Yes}} / no \spc{-0.5}
 \subquestionwithpoints{2} If (1) $n$ was very, very large and (2) you had the same point estimate, and (3) you rejected the null hypothesis, would this result be clinically or practically significant? Yes / \inblue{\underline{no}} \spc{-0.5}
 
 \subquestionwithpoints{6} Calculate the p-val of this test as a function of $\Phi$.\color{blue}
@@ -223,9 +223,15 @@ You didn't need to approximate the answer as a decimal; I wrote it only for refe
 \subquestionwithpoints{6} Construct a 95\% confidence interval (CI) estimate for $\theta$ to two decimal places. Use $\sigmahat^2$ as the best guess for the variance of $X$. Provide one interpretation of the CI you constructed.\color{blue}
 
 \beqn
-CI_{\theta, 95\%} = \bracks{\xbar \pm z_{97.5\%} \times \se{\Xbar}} \approx \bracks{19.3 \pm 2 \times \frac{\sqrt{8.61}}{\sqrt{10}}} = \bracks{17.44, 21.16}
+\doublehat{CI}_{\theta, 95\%} = \bracks{\xbar \pm z_{97.5\%} \times \se{\Xbar}} \approx \bracks{19.3 \pm 2 \times \frac{\sqrt{8.61}}{\sqrt{10}}} = \bracks{17.44, 21.16}
 \eeqn
 
+Possible explanations: 
+\begin{enumerate}[(I)]
+\item Before this interval was constructed, $\prob{\theta \in \hat{CI}_{\theta, 95\%}} = 95\%$.
+\item If many such datasets were collected and $\doublehat{CI}_{\theta, 95\%}$ were constructed, approximately 95\% of the constructed $\doublehat{CI}_{\theta, 95\%}$'s would contain $\theta$.
+\item The probability $\doublehat{CI}_{\theta, 95\%}$ contains $\theta$ is zero or one.
+\end{enumerate}
 \color{black}
 
 \end{enumerate}
