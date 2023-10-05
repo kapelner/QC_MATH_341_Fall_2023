@@ -48,7 +48,7 @@ My lecture notes are scanned in as PDF files contributed by myself.
 
 ## Exams
 
-* Midterm I, Wednesday, Oct 4
+* Midterm I, Wednesday, Oct 4 [(exam)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/exams/midterm1/midterm1.pdf) [(solutions)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/exams/midterm1/midterm1_solutions.pdf)
 * Midterm II, Wednesday, Nov 8
 * Final, December TBA
 

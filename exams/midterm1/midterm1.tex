@@ -1,0 +1,116 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newcommand{\instr}{\small Your answer will consist of a lowercase string (e.g. \texttt{aebgd}) where the order of the letters does not matter. \normalsize}
+
+\title{Math 341 / 641 Fall \the\year{} \\ Midterm Examination One}
+\author{Professor Adam Kapelner}
+
+\date{October 4, \the\year{}}
+
+\begin{document}
+\maketitle
+
+\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.\\
+\\
+\noindent I acknowledge and agree to uphold this Code of Academic Integrity. \\~\\
+
+\begin{center}
+\line(1,0){350} ~~~ \line(1,0){100}\\
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+\end{center}
+
+\normalsize
+
+\section*{Instructions}
+This exam is 110 minutes (variable time per question) and closed-book. You are allowed \textbf{one} page (front and back) of a \qu{cheat sheet}, blank scrap paper (provided by the proctor) and a graphing calculator (which is not your smartphone). Please read the questions carefully. Within each problem, I recommend considering the questions that are easy first and then circling back to evaluate the harder ones. No food is allowed, only drinks. %If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+%set.seed(1); paste(rpois(10, 17), collapse = ", ")
+\problem We are trying to infer the mean number of daily (non-holiday) phone calls in a call center that operates Monday-Friday. Our data consists of $n = 10$ non-holiday business days of phone calls. Here are the number of calls on those days with some common summary statistics already computed for you:
+
+\beqn
+\x = \angbraces{14, 22, 22, 18, 22, 20, 19, 15, 23, 18}~\text{where $\xbar = 19.3$ and $\sigmahathat^2 = 8.61$ for this dataset.}
+\eeqn
+
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{4} Which sampling assumption makes more sense (I) the sample data was measured on sampled units from a population of size $N \gg n$ or (II) the sample data is realized from an iid DGP. Justify your answer.\spc{4}
+
+\subquestionwithpoints{4} If the assumption was (I), describe under what circumstances the sample would be an SRS. \spc{5}
+
+\subquestionwithpoints{4} If the assumption was (I) and the sample was not an SRS, what problems would that cause eventually with inference? \spc{6}
+
+\subquestionwithpoints{4} Regardless of your previous answers, let's assume (II) and that the data was
+realized from the following DGP:
+
+\beqn
+\Xoneton \iid \poisson{\theta} := \frac{\theta^x e^{-\theta}}{x!} \indic{x \in \naturals_0} 
+\eeqn
+
+\noindent whose parameter space is $\Theta = (0, \infty)$ and $\expe{X} = \theta$ and $\var{X} = \theta$. \\
+
+For this DGP, find the method of moments estimator for the expectation. Your answer must be a function of $\Xoneton$ and $n$. \spc{1}
+
+\subquestionwithpoints{5} For this DGP, find the method of moments estimator for the variance. Your answer must be a function of $\Xoneton$ and $n$. \spc{1}
+
+\subquestionwithpoints{3} For general sample size $n$, find the likelihood function $\mathcal{L}$.\spc{4}
+
+\subquestionwithpoints{3} For general sample size $n$, find the log likelihood function $\ell$.\spc{4}
+
+\subquestionwithpoints{3} For general sample size $n$, find the score function $s$.\spc{4}
+
+\subquestionwithpoints{4} For general sample size $n$, find the maximum likelihood estimator $\thetahatmle$.\spc{3}
+
+
+\subquestionwithpoints{5} Prove that $\thetahatmle$ is unbiased.\spc{2}
+
+\subquestionwithpoints{4} Provide a point estimate for $\theta$ and justify why you used that estimate.\spc{2}
+
+\subquestionwithpoints{3} Find the variance of $\thetahatmle$.\spc{2}
+
+\subquestionwithpoints{4} Find $I_n(\theta)$ for this iid Poisson DGP.\spc{4}
+
+\subquestionwithpoints{3} Prove that $\thetahatmle$ is a UMVUE.\spc{6}
+
+\subquestionwithpoints{7} Provide an integral expression that  computes the risk under L1 loss of $\thetahatmle$ \emph{approximately}. This is a challenging problem. You may want to leave it until you're done with the rest of the test. Justify each step for partial credit.\spc{4}
+
+\subquestionwithpoints{4} If the true mean number of daily calls is 19 or more, the company would like to hire more representatives. So it is important that the effect be real. Attempt to prove there are 19 or more mean daily calls. What are the two hypotheses?\spc{2}
+
+\subquestionwithpoints{9} Run this hypothesis test at $\alpha = 5\%$. Render a decision and provide a \qu{conclusion sentence} but do not calculate a p-val. You can calculate the RET and test statistic on either the original scale or the standardized scale. Hint: you'll need the variance expression from part (l)\spc{6}
+
+
+\subquestionwithpoints{2} Is the result statistically significant? Yes / no \spc{-0.5}
+\subquestionwithpoints{2} Is is possible you made a Type I error? Yes / no \spc{-0.5}
+\subquestionwithpoints{2} Is is possible you made a Type II error? Yes / no \spc{-0.5}
+\subquestionwithpoints{2} Was this test an \qu{exact test}? Yes / no \spc{-0.5}
+
+\subquestionwithpoints{3} Regardless of the test's decision, explain how this test could have had more statistical power.\spc{3}
+
+
+\subquestionwithpoints{2} If $n$ was very, very large, would this test have been rejected given the same point estimate? Yes / no \spc{-0.5}
+\subquestionwithpoints{2} If (1) $n$ was very, very large and (2) you had the same point estimate, and (3) you rejected the null hypothesis, would this result be clinically or practically significant? Yes / no \spc{-0.5}
+
+\subquestionwithpoints{6} Calculate the p-val of this test as a function of $\Phi$. \spc{5}
+
+
+\subquestionwithpoints{6} Construct a 95\% confidence interval (CI) estimate for $\theta$ to two decimal places. Use $\sigmahat^2$ as the best guess for the variance of $X$. Provide one interpretation of the CI you constructed.\spc{3}
+
+\end{enumerate}
+
+
+\end{document}
