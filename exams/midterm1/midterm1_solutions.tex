@@ -212,10 +212,10 @@ Increase the sample size $n$.
 \subquestionwithpoints{6} Calculate the p-val of this test as a function of $\Phi$.\color{blue}
 
 \beqn
-\doublehat{z} = (19.3 - 19) / 1.38 = 0.22~\Rightarrow p_{val} \approx \prob{Z > \doublehat{z}} = 1 - \prob{Z < -\doublehat{z}} = \Phi(-0.22) \approx 0.59
+\doublehat{z} = (19.3 - 19) / 1.38 = 0.22~\Rightarrow p_{val} \approx \prob{Z > \doublehat{z}} = 1 - \prob{Z < \doublehat{z}} = 1 - \Phi(0.22)
 \eeqn
 
-You didn't need to approximate the answer as a decimal; I wrote it only for reference.
+(For those curious, the answer is $\approx$ 0.59 but there was no need to compute it).
 \color{black}
 
 
