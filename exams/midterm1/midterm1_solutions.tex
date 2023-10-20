@@ -179,7 +179,7 @@ The approximation follows from the CLT which inserts the density of $\normnot{\t
 \subquestionwithpoints{4} If the true mean number of daily calls is 19 or more, the company would like to hire more representatives. So it is important that the effect be real. Attempt to prove there are 19 or more mean daily calls. What are the two hypotheses?\color{blue}\\
 
 \beqn
-H_a : \theta > \theta_0 = 19,~~H_0: \theta \leq \theta_0 = 19
+H_a : \theta > \theta_0 = 19 \Rightarrow ~H_0: \theta \leq \theta_0 = 19
 \eeqn
 
 \color{black}
@@ -191,7 +191,15 @@ H_a : \theta > \theta_0 = 19,~~H_0: \theta \leq \theta_0 = 19
 && RET \approx \Big(-\infty, \theta_0 + z_{1-\alpha} \times \sqrt{\theta_0 / n}\Big] = \Big(-\infty, 19 + 1.65 \times  1.38\Big] = \Big(-\infty, 21.28 \Big]
 \eeqn
 
-Since $\xbar = 19.3 \in RET \Rightarrow $ retain $H_0$. Conclusion: there is not enough evidence to support the theory that there are more than 19 calls per day on average at this calling center.
+Since $\xbar = 19.3 \in RET \Rightarrow $ retain $H_0$. \\
+
+Alternatively, the test can be decisioned via the standardized test statistic:
+
+\beqn
+\doublehat{z} = \frac{19.3-19}{1.38} = .217 \in RET_{std} \approx \bracks{-2,2} \Rightarrow \text{retain}~ H_0
+\eeqn
+
+Conclusion: there is not enough evidence to support the theory that there are more than 19 calls per day on average at this calling center.
 
 \color{black}
 
