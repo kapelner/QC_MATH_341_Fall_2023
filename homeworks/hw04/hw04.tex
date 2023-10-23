@@ -1,0 +1,247 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newtoggle{professormode}
+\toggletrue{professormode} %STUDENTS: DELETE or COMMENT this line
+
+
+
+\title{MATH 341/641 Fall \the\year{} Homework \#4}
+
+\author{Professor Adam Kapelner} %STUDENTS: write your name here
+
+\iftoggle{professormode}{
+\date{Due by email 11:59PM Nov 2, \the\year{} \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+}
+
+\renewcommand{\abstractname}{Instructions and Philosophy}
+
+\begin{document}
+\maketitle
+
+\iftoggle{professormode}{
+\begin{abstract}
+The path to success in this class is to do many problems. Unlike other courses, exclusively doing reading(s) will not help. Coming to lecture is akin to watching workout videos; thinking about and solving problems on your own is the actual ``working out.''  Feel free to \qu{work out} with others; \textbf{I want you to work on this in groups.}
+
+Reading is still \textit{required}. For this homework set, review MATH 340 concepts: the CLT, the CMT, Slutsky's theorems. 
+
+The problems below are color coded: \ingreen{green} problems are considered \textit{easy} and marked \qu{[easy]}; \inorange{yellow} problems are considered \textit{intermediate} and marked \qu{[harder]}, \inred{red} problems are considered \textit{difficult} and marked \qu{[difficult]} and \inpurple{purple} problems are extra credit. The \textit{easy} problems are intended to be ``giveaways'' if you went to class. Do as much as you can of the others; I expect you to at least attempt the \textit{difficult} problems. \qu{[MA]} are for those registered for 621 and extra credit otherwise.
+
+This homework is worth 100 points but the point distribution will not be determined until after the due date. See syllabus for the policy on late homework.
+
+Up to 5 points are given as a bonus if the homework is typed using \LaTeX. Links to instaling \LaTeX~and program for compiling \LaTeX~is found on the syllabus. You are encouraged to use \url{overleaf.com}. If you are handing in homework this way, read the comments in the code; there are two lines to comment out and you should replace my name with yours and write your section. The easiest way to use overleaf is to copy the raw text from hwxx.tex and preamble.tex into two new overleaf tex files with the same name. If you are asked to make drawings, you can take a picture of your handwritten drawing and insert them as figures or leave space using the \qu{$\backslash$vspace} command and draw them in after printing or attach them stapled.
+
+The document is available with spaces for you to write your answers. If not using \LaTeX, print this document and write in your answers. I do not accept homeworks which are \textit{not} on this printout. Keep this first page printed for your records.
+
+\end{abstract}
+
+\thispagestyle{empty}
+\vspace{1cm}
+NAME: \line(1,0){380}
+\clearpage
+}
+
+\problem{Consider the following data from two populations:
+
+%
+%\begin{table}
+%\centering
+%\begin{tabular}{c|cc}
+%& Sample \#1 (Female) & Sample \#2 (Male) \\
+%$n$ & 6 & 10 \\
+%$\xbar
+\beqn
+n_1 = 6,~
+\xbar_1 = 62.3,~
+s^2_1 = 2.25^2,~
+n_2 = 10,~
+\xbar_2 = 70.5,~
+s^2_2 = 2.07^2
+\eeqn
+
+We will provide inference for this data under different assumptions.}
+
+\begin{enumerate}
+
+\easysubproblem{If you assume both populations are iid normal DGP's where the variances are known: $\sigsq_1 = 3.5^2$ and $\sigsq_2 = 4^2$. Run a hypothesis test which attempts to prove unequal means. Is this test an exact or approximate test?}\spc{6}
+
+\intermediatesubproblem{In the previous question, did you rely on any limit theorems? If so, which ones?}\spc{1}
+
+\easysubproblem{If you assume both populations come from an iid DGP but the distribution is unknown, run a hypothesis test which attempts to prove unequal means. Is this test an exact or approximate test?}\spc{6}
+
+\easysubproblem{Create a 95\% CI for the difference in means, $\theta_1 - \theta_2$ under the assumptions from the previous question. Is this test an exact or approximate interval?}\spc{2}
+
+\hardsubproblem{If you assume both populations come from an iid DGP but the distribution is unknown, and that the variances are unknown \textit{but equal}, run a hypothesis test which attempts to prove unequal means. Is this test an exact or approximate test?}\spc{5}
+
+\intermediatesubproblem{In the previous three questions, did you rely on any limit theorems? If so, which ones?}\spc{2}
+
+\end{enumerate}
+
+\problem{We will run inference on real data here.}
+
+
+\begin{enumerate}
+
+
+%\easysubproblem{For two independent samples of Bernoulli DGP's with parameters $\theta_1$ and $\theta_2$, prove that the 2-sample z-test using the sample proportion estimators $\thetahat_1$ and $\thetahat_2$ we developed in class is asymptotically valid.}\spc{10}
+
+\intermediatesubproblem{For the obesity study found at this \href{https://www.biologicalpsychiatryjournal.com/article/S0006-3223(06)01009-2/fulltext}{hyperlink}, consider the outcome metric \qu{binge eating remission} which is binary where 1 = the subject no longer binge eats and 0 = the subject still binge eats. Identify who the two population groups. Run a test attempting to prove remission rates are unequal in the two groups.}\spc{5}
+
+
+\intermediatesubproblem{In the previous question, did you rely on any limit theorems? If so, which ones?}\spc{1}
+
+\intermediatesubproblem{Compute a 95\% CI for the difference in remission rates among the two groups.}\spc{3}
+
+\intermediatesubproblem{In the previous question, did you rely on any limit theorems? If so, which ones?}\spc{1}
+
+\easysubproblem{For the obesity study, now consider the outcome metric \qu{binge episodes per week} which is a count metric (e.g. 1 day, 2 days, 3 days, ..., all 7 days!). Since it's real data, no moments are known! Explain why the normality assumption does not hold for the DGP in both samples.}\spc{2}
+
+
+\intermediatesubproblem{Test the theory that mean \qu{binge episodes per week} differs in both poputions. The raw data is in Table 3 and the format is $\xbar \pm s$. Don't forget that standard error is not standard deviation!}\spc{10}
+
+
+\intermediatesubproblem{[MA] For two independent samples of unknown DGP's with means $\theta_1$ and $\theta_2$ and unknown by finite variances, prove that the Wald test is an asymptotically valid 2-sample z-test. This is the test you'll use in the next question.}\spc{10}
+
+\end{enumerate}
+
+
+\problem{This problem will be about the multiple testing / multiple comparisons problem in general.}
+
+
+\begin{enumerate}
+
+\intermediatesubproblem{Let's say we define a family of $m$ tests. Draw the 2 $\times$ 2 table from class that accounts for the taillies of the four possibilities (decision $\times$ truth). Indicate which quantities you observe. Indicate which quantities you do not observe. Denote random quantities with an uppercase letter. Denote constants with a lowercase later. Make up letters if we did not have letters for each of the four boxes.}\spc{5}
+
+\easysubproblem{In the case where all $m$ $H_0$'s are true, redo (a).}\spc{2.5}
+
+%\easysubproblem{In the case where all $m$ $H_0$'s are true and the $m$ tests are independent, prove that the $m$ p-values are realizations from $\mathcal{P}_1, \ldots, \mathcal{P}_m \iid \stduniform$ (a).}\spc{3}
+
+\easysubproblem{Define FWER, FDP and FDR using notation and in your own words.}\spc{6}
+
+\intermediatesubproblem{Describe a scenario where you would want FWER $\leq 1\%$.}\spc{3}
+
+\intermediatesubproblem{Describe a scenario where you would want FDR $\leq 1\%$.}\spc{3}
+
+\easysubproblem{Prove that FWER = FDR when all $m$ $H_0$'s are true.}\spc{5}
+
+%\easysubproblem{Prove an upper bound on FWER when all $m$ $H_0$'s are true but the tests are dependent. Using this bound, give an expression for $\alpha$, the p-value rejection threshold for an individual test. What is this expression called?}\spc{6}
+
+%\easysubproblem{Prove an upper bound on FWER when all $m$ $H_0$'s are true but the tests are \emph{in}dependent. Using this bound, give an expression for $\alpha$, the p-value rejection threshold for an individual test. What is this expression called?}\spc{6}
+
+\easysubproblem{Describe the Simes procedure in detail. What is the threshold it rejects at?}\spc{6}
+
+\easysubproblem{Describe what the Benjamini-Hochberg procedure accomplishes in detail (not the procedure itself, as the procedure itself is the Simes procedure).}\spc{5}
+
+\extracreditsubproblem{Prove that Simes controls FWER when all $m$ $H_0$'s are true.}\spc{10}
+
+\easysubproblem{Recall the IPMC data from research into mouse sexual dimorphism in genetic knockouts. There are $m = 172,328$ tests and we investigated the naive, Bonferroni, Sidak and Simes for weak FWER control and the Benjamini-Hochberg procedure for FDR control. We wanted FWER and FDR control of 5\% in this demo. 
+
+We looked at the illustration below during lecture. Identify the red line, the yellow line (which is actually two different things), the green line and the black line by writing atop the illustration. Then, indicate and give a numerical estimate to the number of rejections for the naive procedure of setting $\alpha = 5\%$ for all $m$ tests. Then indicate and give a numerical estimate to the number of rejections for the Bonferroni procedure. Then indicate and give a numerical estimate to the number of rejections for the Simes / Benjamini-Hochberg procedure.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=7in]{pvals}
+\end{figure}}~\spc{3}
+
+\easysubproblem{Compute the Bonferroni threshold. Ensure that the Bonferroni is smaller than the Sidak.}\spc{4}
+
+\easysubproblem{Compute the Sidak $\alpha$ threshold. Ensure that the Bonferroni threshold is smaller than the Sidak threshold.}\spc{4}
+
+\easysubproblem{The Simes $\alpha$ threshold is 0.00262. Would that yield more rejections than Bonferroni? Yes / No.}\spc{-0.5}
+
+\easysubproblem{Employing the Benjamini-Hochberg procedure, what does your number of rejections mean? Explain and be specific.}\spc{3}
+
+\intermediatesubproblem{Why do you think the Benjamini-Hochberg procedure to control FDR has had such a huge impact on science?}\spc{10}
+
+\easysubproblem{We looked at the illustration below during lecture, the histogram of the pvals. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=7in]{hist_pvals}
+\end{figure}
+
+Do you believe that all $H_0$'s are true? Yes / No.}\spc{-0.5}
+
+\hardsubproblem{Do you think that Bonferroni / Sidak / Simes are more conservative now that you've seen the plot? Explain}\spc{4}
+
+
+\end{enumerate}%%%%%%%%%%%%%%%%%%%%
+
+\problem{This is about the core thm.}
+
+\begin{enumerate}
+
+\easysubproblem{State the theorem's results for MLE's and MM estimators}\spc{6}
+
+\easysubproblem{Assuming $\thetahatmle \convp \theta$ and the \qu{technical conditions} we glossed over (e.g. the MLE is not on a boundary of $\Theta$), prove that the MLE is asymptotically normal with mean $\theta$ and variance equal to the CRLB on variance.}\spc{25}
+
+\end{enumerate}%%%%%%%%%%%%%%%%%%%%
+
+\problem{Consider height data from 2020's MATH 369 class. We sample $n_1 = 10$ men and measured heights in inches: 67, 68, 69, 70, 70, 71, 72, 72, 73 and 73 and $n_2 = 6$ females and measured heights in inches: 59, 60, 63, 64, 64 and 64.
+
+}
+
+\begin{enumerate}
+
+\easysubproblem{Over the regions of Europe, North America, Australia, and East Asia, female height is found to be normally distributed with mean 64.8in and standard deviation 2.8in (see \href{https://ourworldindata.org/human-height\#height-is-normally-distributed}{here}). We wish to test if our data deviates from this distribution. State the null and alternative hypothesis.}\spc{2}
+
+\easysubproblem{Using these mean and standard deviation values, standardize the data for the $n_2$ female height measurements and provide the values of $z_1, ..., z_6$ below.}\spc{2}
+
+\easysubproblem{In the following space create an illustration that plots the empirical CDF (the estimate, $\hat{F}$) of the standardized female heights. Also on this plot, graph $F_Z(z)$, the CDF of $\normnot{0}{1}$.You will have to look up the quantiles for the standard normal from Math 241. Try to make your illustration to scale as much as possible but zoom in on the y axis more than the x axis. Make the y axis as high as the space below and have y range from 0 to 1.}\spc{8}
+
+\easysubproblem{From your plot in (c), try to estimate $D_6$, the \qu{supremum norm difference} which is the largest absolute difference between the empirical CDF and $F_Z(z)$.}\spc{1}
+
+\easysubproblem{In the statement $\sqrt{n}D_n \convd K$, what is the name of the distribution $K$? And who proved this result? Plot a rough sketch below of the PDF of $K$. Label the axes.}\spc{3}
+
+\easysubproblem{Run the one-sample Kolmogorov-Smirnov (K-S) test for the $H_a$ in (a) using the test statistic in (d) at $\alpha = 5\%$. Note that $F_K(1.359) = 95\%$. What is your decision?}\spc{1}
+
+
+\easysubproblem{We now wish to test if the DGP's for male and female height are different. State the null and alternative hypothesis.}\spc{1}
+
+\intermediatesubproblem{In the following space create an illustration that plots the empirical CDF of the raw female heights (not standardized). Also on this illustration, plot the empirical CDF of the raw male heights (not standardized). Try to make your illustration to scale as much as possible but zoom in on the y axis more than the x axis. Make the y axis as high as the space below and have y range from 0 to 1.}\spc{7}
+
+\easysubproblem{From the plot in (g), try to estimate $D_{6,10}$, the two-sample \qu{supremum norm difference} which is the largest absolute difference between the two empirical CDFs.}\spc{-.5}
+
+\easysubproblem{Run the two-sample K-S test for the $H_a$ in (g) using the test statistic in (i) at $\alpha = 5\%$. Note that $F_K(1.359) = 95\%$. What is your decision?}\spc{2}
+
+\intermediatesubproblem{Is the quantile in the cases in (f) and (j) accurate given our sample size? To run these two K-S tests more accurately, what can you do?}\spc{1}
+
+\end{enumerate}
+\end{document}
+
+\easysubproblem{We now wish to run Fisher's permutation test to test $H_a$ in (g). Explain the steps of the permutation test carefully. Provide the four examples from the lecture of test statistics that can be employed.}\spc{8}
+
+
+\hardsubproblem{Provide an examples of a test statistic that can be employed within the permutation test that we did not discuss in class. Explain why it would work.}\spc{2}
+
+\easysubproblem{In this dataset, what is $B_{all}$, i.e. how many possible unique resamplings are there? Can these number of resamplings be done comfortably in a modern computer?}\spc{1}
+
+\easysubproblem{Let's employ the ratio-of-averages test statistic (even though we used difference-of-averages in class). Under $H_0$ in (g), what do you expect the value of the ratio-of-averages to be?}\spc{1}
+
+\hardsubproblem{Prove that the true mean over all resamplings is indeed the answer from (o).}\spc{7}
+
+
+\easysubproblem{Calculate the ratio-of-averages test statistic for the original data.}\spc{1}
+
+\easysubproblem{Do one resampling of the data manually by hand (make sure you split all $n$ into partitions of sizes $n_1$ and $n_2$). Write the resampled data below. Calculate the ratio-of-averages test statistic.}\spc{7}
+
+
+\easysubproblem{Below is an histogram of all $B$ resamplings. The value of the ratio of averages in the original sample data is displayed as a green vertical line.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=5in]{height_ratios}
+\end{figure}
+
+Estimate the RET at $\alpha = 5\%$. Run the test and report your decision. }\spc{1}
+
+
+\intermediatesubproblem{Estimate Fisher's p-value for this test.}\spc{1}
+
+
+\end{enumerate}
+
+
+\end{document}
+
