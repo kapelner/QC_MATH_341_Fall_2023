@@ -2,6 +2,7 @@
 
 This is the course homepage for Math 341 / 641 at Queens College, City University of New York taught by Professor Adam Kapelner. The syllabus can be read [here](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/syllabus/syllabus.pdf) and downloaded [here](https://raw.githubusercontent.com/kapelner/QC_MATH_341_Fall_2023/main/syllabus/syllabus.pdf).
 
+
 ## Lectures
 
 My lecture notes are scanned in as PDF files contributed by myself.
@@ -15,8 +16,8 @@ My lecture notes are scanned in as PDF files contributed by myself.
 * Lecture 18 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec18.pdf)
 * Lecture 17 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec17.pdf)
 * Lecture 16 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec16.pdf)
-* Lecture 15 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec15.pdf)
-* Lecture 14 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec14.pdf)-->
+* Lecture 15 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec15.pdf)-->
+* Lecture 14 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec14.pdf)
 * Lecture 13 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec13.pdf)
 * Lecture 12 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec12.pdf)
 * Lecture 11 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec11.pdf)
