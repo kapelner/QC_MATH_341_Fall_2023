@@ -2,6 +2,7 @@
 
 This is the course homepage for Math 341 / 641 at Queens College, City University of New York taught by Professor Adam Kapelner. The syllabus can be read [here](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/syllabus/syllabus.pdf) and downloaded [here](https://raw.githubusercontent.com/kapelner/QC_MATH_341_Fall_2023/main/syllabus/syllabus.pdf).
 
+
 ## Lectures
 
 My lecture notes are scanned in as PDF files contributed by myself.
@@ -14,9 +15,9 @@ My lecture notes are scanned in as PDF files contributed by myself.
 * Lecture 19 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec19.pdf)
 * Lecture 18 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec18.pdf)
 * Lecture 17 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec17.pdf)
-* Lecture 16 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec16.pdf)
+* Lecture 16 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec16.pdf)-->
 * Lecture 15 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec15.pdf)
-* Lecture 14 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec14.pdf)-->
+* Lecture 14 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec14.pdf)
 * Lecture 13 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec13.pdf)
 * Lecture 12 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec12.pdf)
 * Lecture 11 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec11.pdf)
@@ -38,9 +39,9 @@ My lecture notes are scanned in as PDF files contributed by myself.
 * Homework 9 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw09/hw09.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw09/hw09.pdf) (due 12/12)
 * Homework 8 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw08/hw08.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw08/hw08.pdf) (due 12/2)
 * Homework 7 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw07/hw07.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw07/hw07.pdf) (due 12/12)
-* Homework 6 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw06/hw06.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw06/hw06.pdf) (not formally due)
-* Homework 5 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw05/hw05.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw05/hw05.pdf) (due 12/1)-->
-* Homework 4 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw04/hw04.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw04/hw04.pdf) (due 11/1)
+* Homework 6 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw06/hw06.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw06/hw06.pdf) (not formally due)-->
+* Homework 5 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw05/hw05.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw05/hw05.pdf) (due 11/16)
+* Homework 4 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw04/hw04.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw04/hw04.pdf) (due 11/2)
 * Homework 3 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw03/hw03.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw03/hw03.pdf) (due 10/8)
 * Homework 2 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw02/hw02.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw02/hw02.pdf) (due 9/20)
 * Homework 1 [(download)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw01/hw01.pdf?raw=true) [(view)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/homeworks/hw01/hw01.pdf) (due 9/9)
