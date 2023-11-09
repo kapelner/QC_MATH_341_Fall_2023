@@ -119,7 +119,7 @@ aic_s_sorted
 best_aic = aic_s_sorted[1]
 delta_aics = aic_s_sorted - best_aic
 akaike_weights = exp(-delta_aics / 2) / sum(exp(-delta_aics / 2))
-round(akaike_weights * 100, 2)
+round(akaike_weights, 3)
 
 #examining the AIC penalty (overfitting)
 set.seed(1)

@@ -1,0 +1,422 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newcommand{\instr}{\small Your answer will consist of a lowercase string (e.g. \texttt{aebgd}) where the order of the letters does not matter. \normalsize}
+
+\title{Math 341 / 641 Fall \the\year{} \\ Midterm Examination Two \inred{Solutions}}
+\author{Professor Adam Kapelner}
+
+\date{November 8, \the\year{}}
+
+\begin{document}
+\maketitle
+
+\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.\\
+\\
+\noindent I acknowledge and agree to uphold this Code of Academic Integrity. \\~\\
+
+\begin{center}
+\line(1,0){350} ~~~ \line(1,0){100}\\
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+\end{center}
+
+\normalsize
+
+\section*{Instructions}
+This exam is 110 minutes (variable time per question) and closed-book. You are allowed \textbf{two} 8.5'' $\times$ 11'' page (front and back) \qu{cheat sheets}, blank scrap paper (provided by the proctor) and a graphing calculator (which is not your smartphone). Please read the questions carefully. Within each problem, I recommend considering the questions that are easy first and then circling back to evaluate the harder ones. Show as much partial work as you can and justify each step. No food is allowed, only drinks. %If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+\problem We revisit the data from the International Mouse Phenotyping Consortium (IMPC). As described in Karp et al. (2017), the IMPC coordinates a large study to functionally annotate every protein coding gene by exploring the impact of the gene knockout on the resulting phenotype for up to 234 traits of interest. There are $m = 172328$ gene-phenotype tests.
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{3} If we want to control FWER at 1\%, what is the Bonferroni threshold $\alpha$  for each of the $m$ tests to three significant digits?\\
+
+\inred{
+
+\beqn
+\alpha = \frac{FWER}{m} = \frac{0.01}{172328} = 5.80 \times 10^{-8}
+\eeqn
+
+}
+
+\subquestionwithpoints{3} Write in English about the practical problem of employing the control in part (a).\\
+
+\inred{
+This $\alpha$ is very small and thus we will have low power and rarely reject and thus we will not make many discoveries.
+}
+
+\subquestionwithpoints{6} Let $p_{(1)}, p_{(2)}, \ldots, p_{(m)}$ denote the sorted Fisher's p-value for all $m$ tests. The FDR procedure at 1\% expected false discoveries yields 4,579 tests that are rejected. Estimate the value of the maximum p-value of the set of the 4,579 rejections' p-values to three significant digits. Is this higher than the Bonferroni $\alpha$? Yes/no.\\
+
+\inred{
+The FDR procedure is identical to the Simes procedure where we order all tests by their p-value and reject the first $a_*$ defined by $a_* := \max{a\,:\, p_{(a)} \leq FWER \frac{a}{m}}$. Here we are given that $a_* = 4579$ so we can just solve for $p_{(a_*)}$ to obtain the upper bound on the p-value:
+
+\beqn
+p_{(a_*)} \leq FWER \frac{a_*}{m} = 0.01 \frac{4579}{172328} = 0.000266
+\eeqn
+
+Yes, this is larger than the Bonferroni FWER control's $\alpha$.
+
+}
+
+\end{enumerate}
+
+\problem We wish to test differences between the distribution of the number of LIRR delays  post-corona pandemic and the distribution of the number of LIRR delays pre-corona pandemic. We'll define population \#1 to be pre-pandemic (March, 2020 and before) and population \#2 to be post-pandemic (January, 2022 to present day). This is real monthly LIRR data going back to January, 2016 as found at \href{https://catalog.data.gov/dataset/?res_format=RDF&organization_type=State+Government&_tags_limit=0&organization=state-of-new-york&tags=performance}{catalog.data.gov}. We will assume the monthly samples for both populations are iid and independent between the two populations as well. Some relevant summary statistics are below:
+\pagebreak
+
+
+%x1 = c(6, 18, 6, 3, 3, 8, 8, 0, 2, 49, 185, 82, 37, 11, 15, 2, 23, 7, 11, 0, 8, 44, 180, 415, 30, 19, 22, 11, 4, 11, 5, 2, 5, 31, 570, 76, 29, 23, 13, 5, 11, 19, 31, 6, 6, 116, 258, 74, 25, 13, 2)
+%x2 = c(12, 20, 5, 6, 4, 2, 6, 2, 3, 29, 141, 51, 5, 7, 8, 15, 4, 7, 15, 5, 3)
+%length(x1)
+%length(x2)
+%mean(x1)
+%mean(x2)
+%sd(x1)
+%sd(x2)
+%
+%x_min = min(c(x1, x2))
+%x_max = max(c(x1, x2))
+%range_min = -5
+%range_max = 450
+%
+%x_RES = 0.1
+%x_grid = seq(from = range_min, to = range_max, by = x_RES)
+%Fhathat_x_1 = ecdf(x1)(x_grid)
+%Fhathat_x_2 = ecdf(x2)(x_grid)
+%abs_diff = abs(Fhathat_x_1 - Fhathat_x_2)
+%max(abs_diff)
+%
+%illustration_data = data.frame(
+%  x = x_grid, 
+%  Fhathat_x_1 = Fhathat_x_1, 
+%  Fhathat_x_2 = Fhathat_x_2, 
+%  abs_diff = abs_diff)
+%ggplot(illustration_data) + 
+%  geom_point(aes(x = x, y = Fhathat_x_1), shape=1) + 
+%  geom_point(aes(x = x, y = Fhathat_x_2), shape=4) + 
+%  scale_y_continuous(breaks=seq(0,1,by=0.1)) +
+%  ylab("empirical CDF value")
+
+
+\beqn
+&&n_1 = 51, ~\xbar_1 = 49.8, ~s^2_1 = 104.83^2 \\
+&&n_2 = 21, ~\xbar_2 = 16.7, ~s^2_2 = 30.70^2 \\
+\eeqn
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{3} To test difference in population means, would a 2-sample t-test be appropriate? Explain in English why or why not.\\
+
+\inred{
+The exact or approximate t-test both require the two populations' DGP's to be iid normal. Here, we are dealing with number of delays which means $\mathcal{S}_X = \naturals_0$ for both populations. This means the two populations' DGP's are not normal and hence the t-test is \textbf{inappropriate}.
+
+
+}
+
+\subquestionwithpoints{6}  Regardless of whether it is appropriate or not, use an $F$-test to attempt to prove the variances are unequal i.e. $H_a: \sigsq_1 \neq \sigsq_2$ at $\alpha = 5\%$. The relevant values you need are $F_W(0.502) = 2.5\%$ and $F_W(2.25) = 97.5\%$ where $W \sim F_{50,20}$. Indicate the RET region, the decision and write a concluding sentence.\\
+
+\inred{
+\beqn
+\doublehat{r} := \frac{s^2_1}{s^2_2} = \frac{104.83^2}{30.70^2} = 11.66 \notin \text{RET} = \bracks{0.512, 2.25}~\Rightarrow~\text{Reject} ~H_0
+\eeqn
+
+There is sufficient evidence to conclude the variance of the number of LIRR delays pre-pandemic and the variance of the number of LIRR delays post-pandemic are unequal.
+
+}
+
+\subquestionwithpoints{8} Regardless of whether it is appropriate or not, run a 2-sample t-test of a difference in means, i.e. $H_a: \theta_1 \neq \theta_2$, assuming equal variance at $\alpha = 5\%$. The relevant t-value is $t_{n_1 + n_2 - 2, 1 - \alpha/2} = t_{70, 97.5\%} = 1.99$. Indicate the decision and write a concluding sentence. \\
+
+\inred{
+\beqn
+\hspace{-60px}s_{\text{pooled}} &=& \sqrt{\frac{(n_1 - 1)s^2_1 + (n_2 - 1)s^2_2}{n_1 + n_2 - 2}} = \sqrt{\frac{50 \cdot 104.83^2 + 20 \cdot 30.70^2}{70}} = \sqrt{8118.8} = 90.10 \\
+\doublehat{T} &=& \frac{\xbar_1 - \xbar_2}{s_{\text{pooled}} \sqrt{\oneover{n_1} + \oneover{n_2}}} = \frac{49.8 - 16.7}{90.10 \sqrt{\oneover{51} + \oneover{21}}} = \frac{33.1}{32.28} = 1.02 \in \text{RET} = \bracks{-1.99, 1.99}~\Rightarrow~\text{Retain}~H_0
+\eeqn
+
+There is insufficient evidence to conclude the mean number of LIRR delays pre-pandemic and the mean number of LIRR delays post-pandemic are unequal.
+
+}
+\pagebreak
+
+\subquestionwithpoints{6} Assume the answer to (a) was \qu{no}, run an asymptotically valid test of a difference in means, i.e. $H_a: \theta_1 \neq \theta_2$, at $\alpha = 5\%$. Calculate the test statistic, provide the RET region, indicate the decision and write a concluding sentence.
+
+\inred{
+We run the Wald test whose test statistic is asymptotically normal.
+
+\beqn
+\doublehat{Z} = \frac{\xbar_1 - \xbar_2}{\sqrt{\frac{s^2_1}{n_1} + \frac{s^2_2}{n_2}}} = \frac{49.8 - 16.7}{\sqrt{\frac{104.83^2}{51} + \frac{30.70^2}{21}}} = \frac{33.1}{16.14} = 2.05 \notin \text{RET} = \bracks{-1.96,1.96}~\Rightarrow~\text{Reject}~H_0
+\eeqn
+
+There is sufficient evidence to conclude the mean number of LIRR delays pre-pandemic and the mean number of LIRR delays post-pandemic are unequal.
+
+}
+
+\subquestionwithpoints{10} This test can also be accomplished with a 2-sample Kolmogorov-Smirnov (KS) test albeit less-powerfully as the KS test looks for any difference in the two distributions (not only the mean). Below is a plot of $\hat{F}(x)$ for both populations. Population 1 is plotted as \qu{o} and population 2 as \qu{x}.
+
+\vspace{0cm}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=6in]{empirical_cdfs}
+\end{figure}
+\vspace{-0.5cm}
+
+Run the 2-sample KS test at $\alpha = 5\%$. Note that $F_K(1.359) = 95\%$ where $K \sim $ Kolmogorov dist. The alternative hypothesis is $H_a: \text{DGP}_1 \neq \text{DGP}_2$. Calculate the test statistic, provide the RET region, indicate and decision and write a concluding sentence.\\
+
+\inred{
+We can estimate $\doublehat{D}_{n_1, n_2}$ from the $\hat{F}_1(x)$ and $\hat{F}_2(x)$ plots above. At around $x = 60$ it appears as if the difference is slightly less than 3 y-axis gridlines where each has width 0.1. So let's estimate $\doublehat{D}_{n_1, n_2} = 0.28$. We then calculate the test statistic:
+
+\beqn
+\sqrt{\frac{n_1 n_2}{n_1 + n_2}} \doublehat{D}_{n_1, n_2} = \sqrt{\frac{51 \cdot 21}{51 + 21}} 0.28 = 1.080 \in \text{RET} = \bracks{0, 1.359}~\Rightarrow~\text{Retain}~H_0
+\eeqn
+
+There is insufficient evidence to conclude the distribution of the number of LIRR delays pre-pandemic and the distribution of the number of LIRR delays post-pandemic are unequal.
+
+
+}
+
+\end{enumerate}
+\pagebreak
+
+\problem Assume the following DGP:
+
+\beqn
+\Xoneton \iid \poisson{\theta_1} := \frac{\theta^x e^{-\theta}}{x!} \indic{x \in \naturals_0}
+\eeqn
+
+
+%\problem Assume you have data from two populations realized from the following DGPs:
+%
+%\beqn
+%&& X_{1,1}, X_{1,2}, \ldots, X_{1, n_1} \iid \poisson{\theta_1} := \frac{\theta_1^x e^{-\theta_1}}{x!} \indic{x \in \naturals_0} \\
+%&& X_{2,1}, X_{2,2}, \ldots, X_{2, n_2} \iid \poisson{\theta_2} := \frac{\theta_2^x e^{-\theta_2}}{x!} \indic{x \in \naturals_0} 
+%\eeqn
+
+Here are some facts about this DGP from the previous midterm:
+
+\beqn
+\mathcal{L}(\theta; \Xoneton) &=& \frac{\theta^{\sum_{i=1}^n X_i} e^{-n\theta}}{\prod_{i=1}^n X_i!} \\
+\ell(\theta; \Xoneton) &=& \natlog{\theta} \sum_{i=1}^n X_i - n\theta - \sum_{i=1}^n \natlog{X_i!} \\
+s(\theta; \Xoneton) &=& \frac{\sum_{i=1}^n X_i}{\theta} - n = n\parens{\frac{\Xbar}{\theta} - 1} \\
+I_n(\theta) &=& \frac{n}{\theta}~~\Rightarrow~~I(\theta) = \frac{1}{\theta} \\
+\thetahatmle &=& \Xbar~~\text{and it is the UMVUE, i.e.}~~\var{\Xbar} = \text{CRLB} :=  \oneover{I_n(\theta)} = \overn{\theta}
+\eeqn
+\vspace{-0.75cm}
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{6} Provide the score test statistic for testing $H_a: \theta \neq \theta_0$. The statistic must be a function of $\Xoneton, n, \theta_0$ only.  \\
+
+\inred{
+\beqn
+\hat{Z}\,|\,H_0 = \frac{s(\theta_0; \Xoneton)}{\sqrt{I_n(\theta_0)}} = \frac{n\parens{\frac{\Xbar}{\theta_0} - 1}}{\sqrt{\frac{n}{\theta_0}}} 
+\eeqn
+}
+
+\subquestionwithpoints{6} Provide the likelihood ratio test statistic $\hat{\Lambda} := 2\natlog{\hat{LR}}$ for testing $H_a: \theta \neq \theta_0$.  The statistic must be a function of $\Xoneton, n, \theta_0$ only. 
+
+\inred{
+\beqn
+\hat{\Lambda} &:=& 2\natlog{\frac{
+\frac{\parens{\thetahatmle}^{\sum_{i=1}^n X_i} e^{-n\thetahatmle}}{\prod_{i=1}^n X_i!}
+}{
+\frac{\theta_0^{\sum_{i=1}^n X_i} e^{-n\theta_0}}{\prod_{i=1}^n X_i!}
+}} \\
+&=& 2\natlog{\frac{
+\parens{\thetahatmle}^{\sum_{i=1}^n X_i} e^{-n\thetahatmle}
+}{
+\theta_0^{\sum_{i=1}^n X_i} e^{-n\theta_0}
+}} \\
+&=& 2\natlog{\frac{
+\Xbar^{n\Xbar} e^{-n\Xbar}
+}{
+\theta_0^{n\Xbar} e^{-n\theta_0}
+}} \\
+&=& 2 \parens{n\Xbar \natlog{\frac{\Xbar}{\theta_0}} - n(\Xbar - \theta_0)}
+\eeqn
+
+Simplifying is not necessary to get full credit but it will make (d) easier to compute.
+
+}
+
+
+\pagebreak
+
+\subquestionwithpoints{6} Consider the reparameterization of $\phi = \sqrt{\theta}$. Provide an asymptotically normal test statistic for testing $H_a: \phi \neq \phi_0$.  The statistic must be a function of $\Xoneton, n, \theta_0$ only. 
+
+\inred{
+The delta method theorem states that 
+
+\beqn
+\frac{\hat{\phi} - \phi_0}{|g'(\theta)| \text{SE} [\thetahat]  } \convd \stdnormnot
+\eeqn
+
+We compute $|g'(\theta)| = |-\half \theta^{-\half}| = \half \theta^{-\half}$ and SE$[\thetahat] = \sqrt{\theta / n}$ as given in the problem description. Putting this all together and simplifying, the test statistic is 
+
+\beqn
+\hat{Z}\,|\,H_0 = \frac{\hat{\phi} - \phi_0}{\half \theta^{-\half} \sqrt{\theta / n}} = \frac{\hat{\phi} - \phi_0}{\oneoversqrt{4n}}
+\eeqn
+}
+
+For the rest of this problem, consider the prepandemic LIRR delay data where $n=51$ and $\xbar = 49.8$.
+
+\subquestionwithpoints{6} Use the likelihood ratio test to test if $H_a: \theta \neq 35$. Indicate the RET region and the decision.
+
+\inred{
+\beqn
+\doublehat{\Lambda} &=& 2 \parens{n\xbar \natlog{\frac{\xbar}{\theta_0}} - n(\xbar - \theta_0)} \\
+&=& 2 \parens{51 \cdot 49.8 \natlog{\frac{49.8}{35}} - 51(49.8 - 35)} \\
+&=& 281.8 \notin \text{RET} = \bracks{0, 3.84}~\Rightarrow~\text{Reject} ~H_0
+\eeqn
+
+}
+
+\subquestionwithpoints{6} Create a 95\% confidence interval estimate for $\phi = \sqrt{\theta}$.\\
+
+\inred{
+\beqn
+\doublehat{CI}_{\phi, 95\%} &\approx& \bracks{\doublehat{\phi} \pm z_{1-\alpha/2}\, |g'(\theta)| \,\hat{\text{SE}} [\thetahat]} \\
+&=& \bracks{\sqrt{\thetahathat} \pm  z_{1-\alpha/2}  \oneoversqrt{4n}} ~~\text{where}~~ \sqrt{\thetahathat} = \sqrt{\xbar}  = \sqrt{49.8} =  7.06\\
+&=& \bracks{7.06 \pm 1.96 \cdot \oneoversqrt{4 \cdot 51}} \\
+&=& \bracks{6.92, 7.19}
+\eeqn
+
+
+}
+
+\end{enumerate}
+\vfill
+\problem We seek to test if hair length and eye color of cats are dependent. Here is a sample of cats organized into a contingency table with rowsums and colsums supplied:
+\pagebreak
+
+\begin{table}[htp]
+\centering
+\begin{tabular}{c|ccc|c}
+                & Blue Eyes & Yellow Eyes & Green Eyes & Total \\ \hline
+Short Hair  & 25           & 48              &  13             & 86 \\
+Long Hair   & 8            & 32              &  24             & 64 \\ \hline
+Total         & 33           & 80              &  37             & 150 \\ 
+\end{tabular}
+\end{table}
+
+Let $\theta_{i,j}$ denote the joint probability of having hair length of row $i$ and eye color of column $j$. Let $\theta_{i \cdot}$ denote the marginal probability of having hair length of row $i$.  Let $\theta_{\cdot j}$ denote the marginal probability of having eye color of column $j$. 
+
+Below are some 95\%iles of different chi-squared distributions by degrees of freedom.
+
+\begin{table}[htp]
+\centering
+\begin{tabular}{c|ccccccccccc}
+degrees of freedom &       1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+$x$ where $F_{\chi^2}(x) = .95$ & 3.84 & 5.99 & 7.81 & 9.49 & 11.07 & 12.59 & 14.07 & 15.51 & 16.92 & 18.31
+\end{tabular}
+\end{table}
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{3} Using the $\theta$ notation above, write the null and alternative hypotheses.\\
+
+\inred{
+\beqn
+&& H_a: \exists i,j~~\theta_{i,j} \neq \theta_{i \cdot} \theta_{\cdot j} \\
+&& H_0: \forall i,j~~\theta_{i,j} =      \theta_{i \cdot} \theta_{\cdot j}
+\eeqn
+
+
+}
+\subquestionwithpoints{10} Run the test from part (a) at $\alpha = 5\%$. Indicate the decision.\\
+
+\inred{
+We first calculate the expected counts below. The margins record the proportions in each row and column:\\
+
+%\begin{table}[htp]
+%\centering
+%\inred{
+\begin{tabular}{c|ccc|c}
+                & Blue Eyes & Yellow Eyes & Green Eyes &  \\ \hline
+Short Hair  & 18.91           & 50.45              &  21.2             &  ($\theta_{1 \cdot} = 0.573$) \\
+Long Hair   & 14.09           & 37.60              &  15.8             &  ($\theta_{2 \cdot} = 0.427$) \\ \hline
+         & ($\theta_{\cdot 1} = 0.22$)         & ($\theta_{\cdot 2} = 0.587$)               &   ($\theta_{\cdot 2} = 0.247$)                           &  \\ 
+\end{tabular}
+%\end{table}
+
+Now we calculate the chi-squared statistic cell by cell calculating $(O_{ij} - E_{ij})^2/E_{ij}$:\\
+
+%\begin{table}[h]
+%\centering
+\begin{tabular}{c|ccc}
+                & Blue Eyes & Yellow Eyes & Green Eyes   \\ \hline
+Short Hair  & 1.96 &0.12 &3.17              \\
+Long Hair   & 2.63 & 0.83 & 4.26  \\ 
+\end{tabular}
+%\end{table}
+
+We sum to obtain the statistic. The threshold comes from the $\chisq{(r-1)(c-1) = 2}$ distribution:
+
+\beqn
+\doublehat{\phi} = 12.97 \notin \text{RET} = \bracks{0, 5.99}~\Rightarrow~\text{Reject}~H_0
+\eeqn
+}
+
+\end{enumerate}
+\pagebreak
+
+\problem In class we modeled the maximum daily wind speed at JFK in the year 2013 and thus $n = 365$ for our dataset $\x$. We fit seven different models to the data by computing the MLE's of all their parameters and calculated their AIC's below from lowest to highest left to right.
+
+\begin{table}[htp]
+\centering
+\begin{tabular}{c|ccccccccccc}
+distribution    &gamma    & logistic     & normal   & gumbel  & weibull  &  frechet & gompertz      & exponential \\ \hline \hline
+$k := \dime{\thetavec}$ & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 1 \\
+AIC  & 2262.6   & 2265.3     & 2289.4   & 2290.6   & 2300.2   & 2352.7  & 2404.5   & 2872.2 \\ \hline
+Normalized  \\
+Akaike \\
+Weight &    0.799  &  0.201  &  0.000  &  0.000 &   0.000  &  0.000  &  0.000  &  0.000 
+\end{tabular}
+\end{table}
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{3} Which DGP of the seven is the best fitting model and why?\\
+
+\inred{
+The gamma model is the best fitting as it has the lowest AIC metric.
+}
+
+\subquestionwithpoints{3} Compute the corrected AIC for the best fitting model.\\
+
+\inred{
+\beqn
+AICc_{m_*} &=& -2\ell_{m_*} + 2k_{m_*} \frac{n}{n - k_{m_*} - 1} = AIC - 2k_{m_*} + 2k_{m_*} \frac{n}{n - k_{m_*} - 1} \\
+&=& 2262.6 - 2\cdot 2 + 2\cdot 2 \frac{365}{365 - 2 - 1} \\
+&=& 2260.6
+\eeqn
+}
+
+\subquestionwithpoints{6} Compute $\ell(\thetahathatmle; \x)$ where the DGP is $\Xoneton \iid \exponential{\theta}$.\\
+
+Let $m=7$ denote the exponential model.
+
+\inred{
+\beqn
+AIC_{7} = -2\ell_{7} + 2k_{7} ~\Rightarrow~ \ell_{7} = -\frac{AIC_{7} - 2k_{7}}{2} = -\frac{2872.2 - 2 \cdot 1}{2} = -1435.1
+\eeqn
+
+
+}
+
+\end{enumerate}
+
+
+
+\end{document}
