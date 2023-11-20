@@ -84,7 +84,7 @@ ggplot(X) + geom_histogram(aes(x = pvalue), bins = 1000)
 X
 
 FWER_0 = 0.05
-FDR_0 = 0.05
+FDR_0 = 0.01
 setorder(X, pvalue)
 
 tests_rejected_naive = which(X$pvalue < FWER_0)

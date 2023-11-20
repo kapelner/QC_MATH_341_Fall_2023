@@ -13,9 +13,9 @@ My lecture notes are scanned in as PDF files contributed by myself.
 * Lecture 21 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec21.pdf)
 * Lecture 20 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec20.pdf)
 * Lecture 19 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec19.pdf)
-* Lecture 18 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec18.pdf)
+* Lecture 18 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec18.pdf)-->
 * Lecture 17 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec17.pdf)
-* Lecture 16 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec16.pdf)-->
+* Lecture 16 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec16.pdf)
 * Lecture 15 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec15.pdf)
 * Lecture 14 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec14.pdf)
 * Lecture 13 [(notes)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/lectures/lec13.pdf)
@@ -50,7 +50,7 @@ My lecture notes are scanned in as PDF files contributed by myself.
 ## Exams
 
 * Midterm I, Wednesday, Oct 4 [(exam)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/exams/midterm1/midterm1.pdf) [(solutions)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/exams/midterm1/midterm1_solutions.pdf)
-* Midterm II, Wednesday, Nov 8
+* Midterm II, Wednesday, Nov 8 [(exam)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/exams/midterm2/midterm2.pdf) [(solutions)](https://github.com/kapelner/QC_MATH_341_Fall_2023/blob/main/exams/midterm2/midterm2_solutions.pdf)
 * Final, December TBA
 
 ## Practice Exams
