@@ -1,0 +1,325 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newcommand{\instr}{\small Your answer will consist of a lowercase string (e.g. \texttt{aebgd}) where the order of the letters does not matter. \normalsize}
+
+\title{Math 341 / 641 Fall \the\year{} \\ Final Examination}
+\author{Professor Adam Kapelner}
+
+\date{December 15, \the\year{}}
+
+\begin{document}
+\maketitle
+
+\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.\\
+\\
+\noindent I acknowledge and agree to uphold this Code of Academic Integrity. \\~\\
+
+\begin{center}
+\line(1,0){350} ~~~ \line(1,0){100}\\
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+\end{center}
+
+\normalsize
+
+\section*{Instructions}
+This exam is 120 minutes (variable time per question) and closed-book. You are allowed \textbf{three} 8.5'' $\times$ 11'' pages (front and back) \qu{cheat sheets}, blank scrap paper (provided by the proctor) and a graphing calculator (which is not your smartphone). Please read the questions carefully. Within each problem, I recommend considering the questions that are easy first and then circling back to evaluate the harder ones. Show as much partial work as you can and justify each step. No food is allowed, only drinks. %If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+\input{R_equations_table}
+
+\problem An uber driver is rated on a 1-5 $\bigstar$ scale. Most ratings are 5 $\bigstar$. Anything less means something went wrong thus we are interested in 5 $\bigstar$ vs $<5 \bigstar$. So let 1 indicate 5 $\bigstar$ and 0 indicate $<5\bigstar$. We model a driver's $n$ ratings with the DGP: $X  \sim \binomial{n}{\theta}$. The number of rides $n$ is fixed and we seek inference on the parameter $\theta$.
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{3} What is the parameter space of $\theta$?\spc{1}
+
+\subquestionwithpoints{3} Using $f(\theta) = \betanot{\alpha}{\beta}$, how is the posterior $f(\theta\,|\,X)$ distributed?\spc{1}
+
+
+
+\subquestionwithpoints{6} Show that $\thetahatmmse$ is asymptotically normal. Find its mean and variance. \spc{3}
+
+
+\subquestionwithpoints{6} Compute $\bias{\thetahatmap}$. \spc{4}
+
+
+A new driver in the United States takes 5 rides in the first day and get only one 5 $\bigstar$ rating and 4 $<5 \bigstar$ ratings. Use this data for the rest of the questions in this problem.
+
+\subquestionwithpoints{4} Using the Jeffrey's prior, calculate $\thetahathatmmse$ to two significant digits.\spc{1}
+
+\subquestionwithpoints{4} Using Haldane's prior, write an expression for a 95\% credible region. Use numerical values for parameters.\spc{1}
+
+\subquestionwithpoints{5} Interpret the interval from the previous question.\spc{3}
+
+\subquestionwithpoints{5} Using Laplace's prior, write an expression for the Bayesian p-value for the test whether this driver has a worse-than-average rating. The average average rating is 0.96 in the United States. Use numerical values for parameters.\spc{2}
+
+Five rides is too small to make a meaningful estimate. Instead we rely on previous data. Fitting a beta distribution to previous data yields $\doublehat{\alpha}^{\text{MLE}} = 961.24$ and  $\doublehat{\beta}^{\text{MLE}} = 40.58$.  We now use these maximum likelihood estimates as $\alpha$ and $\beta$ in $f(\theta)$ for the remainder of the problem.
+
+\subquestionwithpoints{2} Would this prior be considered objective? Yes / no \spc{-0.5}
+
+\subquestionwithpoints{4} Compute the shrinkage metric $\rho$ for $\thetahathatmmse$ to three significant digits. \spc{2}
+
+\subquestionwithpoints{4} Write an expression for $\thetahathatmmae$. Use numerical values for parameters. \spc{2}
+
+
+
+\subquestionwithpoints{5} For the driver's next $1,000$ rides, what is the distribution of the count of future 5 $\bigstar$ ratings, i.e. $\cprob{X_{*}}{X = 1}$? Use numerical values for parameters.\spc{2}
+
+%\subquestionwithpoints{4} We now wish to measure performance in $\phi := \natlog{\frac{1-\theta}{\theta}}$. Find the kernel of the Jeffrey's prior. \spc{7}
+
+\end{enumerate}
+
+
+
+\problem You are the data scientist at T-Mobile trying to understand the number of customer support calls on a weekday at primetime at the East Coast switchboard per minute. For two weeks Monday-Friday from 6:00:00PM - 6:00:59PM, here are the number of calls:
+
+\begin{verbatim}
+583 565 580 524 644 598 564 594 564 538
+\end{verbatim}
+
+\noindent You model the number of calls per minute as the DGP: $\Xoneton \iid \poisson{\theta}$. The average number of calls is $\xbar = 575.4$.
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{3} Using the Laplace prior, what is $f(\theta)$?\spc{1}
+
+\subquestionwithpoints{4} Using the Laplace prior, what is the posterior distribution of $\theta\,|\,\X$? Use numerical values for parameters. \spc{2}
+
+\subquestionwithpoints{5} Using the Haldane prior, create a 90\% credible region for $\theta\,|\,\X$. Use numerical values for parameters.\spc{2}
+
+\subquestionwithpoints{6} Using the Jeffrey's prior, create a 95\% posterior predictive interval (PI) for the number of calls from 6:00:00PM - 6:00:59PM on the next weekday. Use numerical values for parameters.\spc{2}
+
+\end{enumerate}
+
+\problem You are a data scientist studying Chevron's dividends. The following are the $n=27$ quarterly dividend returns of Chevron stock (as a \%) dating back to February, 2016:
+
+\begin{verbatim}
+3.6 3.6 3.4 4.2 4.6 5.5 5.0 5.5 5.9 5.9 3.6 4.7 3.9 4.1 
+3.9 4.0 3.8 3.5 4.0 3.8 4.0 4.1 3.8 4.0 4.2 4.2 5.0
+\end{verbatim}
+
+\noindent You model the quarterly returns as the DGP: $\Xoneton \iid \normnot{\theta}{\sigsq}$ where both $\theta$ and $\sigsq$ are unknown parameters. The average dividend return is $\xbar = 4.289$ and the sample variance of the returns is $s^2 = 0.526$.
+
+
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{6} Using the Jeffrey's prior, what is the posterior distribution, $f(\theta,\,\sigsq\,|\,\X)$? Round the parameters to three decimal places.\spc{4}
+
+\subquestionwithpoints{6} Using the Jeffrey's prior, write an expression for the Bayesian p-value for the test for $H_a: \theta < 4$. Use numerical values for parameters.\spc{5}
+
+\subquestionwithpoints{6} Find an expression for the probability that Chevron's next quarter's dividend will exceed 5\%. Use numerical values for parameters.\spc{5}
+
+\end{enumerate}
+\pagebreak
+
+\problem Consider the DGP:
+
+\beqn
+\Xoneton \iid \geometric{\theta} := \theta(1-\theta)^x\indic{x \in \naturals_0}~~\text{where}~~ \expe{X} = \frac{1-\theta}{\theta},~\var{X} = \frac{1-\theta}{\theta^2}
+\eeqn
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{6} Find the posterior distribution of $\theta$ and the parameters of this distribution. Assume the Laplace prior.\spc{4}
+\subquestionwithpoints{7} Find the Jeffrey's prior and its parameters for this DGP. \spc{7}
+
+
+\end{enumerate}
+
+\end{document}
+
+\problem We revisit the data from the International Mouse Phenotyping Consortium (IMPC). As described in Karp et al. (2017), the IMPC coordinates a large study to functionally annotate every protein coding gene by exploring the impact of the gene knockout on the resulting phenotype for up to 234 traits of interest. There are $m = 172328$ gene-phenotype tests.
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{4} If we want to control FWER at 1\%, what is the Bonferroni threshold $\alpha$ for each of the $m$ tests to three significant digits?\spc{2.5}
+
+\subquestionwithpoints{4} Write in English about the practical problem of employing the control in part (a).\spc{3}
+
+\subquestionwithpoints{6} Let $p_{(1)}, p_{(2)}, \ldots, p_{(m)}$ denote the sorted Fisher's p-value for all $m$ tests. The FDR procedure at 1\% expected false discoveries yields 4,579 tests that are rejected. Estimate the value of the maximum p-value of the set of the 4,579 rejections' p-values to three significant digits. Is this higher than the Bonferroni $\alpha$? Yes/no.\spc{4}
+
+\end{enumerate}
+
+\problem We wish to test differences between the distribution of the number of LIRR delays  post-corona pandemic and the distribution of the number of LIRR delays pre-corona pandemic. We'll define population \#1 to be pre-pandemic (March, 2020 and before) and population \#2 to be post-pandemic (January, 2022 to present day). This is real monthly LIRR data going back to January, 2016 as found at \href{https://catalog.data.gov/dataset/?res_format=RDF&organization_type=State+Government&_tags_limit=0&organization=state-of-new-york&tags=performance}{catalog.data.gov}. We will assume the monthly samples for both populations are iid and independent between the two populations as well. Some relevant summary statistics are below:
+
+
+%x1 = c(6, 18, 6, 3, 3, 8, 8, 0, 2, 49, 185, 82, 37, 11, 15, 2, 23, 7, 11, 0, 8, 44, 180, 415, 30, 19, 22, 11, 4, 11, 5, 2, 5, 31, 570, 76, 29, 23, 13, 5, 11, 19, 31, 6, 6, 116, 258, 74, 25, 13, 2)
+%x2 = c(12, 20, 5, 6, 4, 2, 6, 2, 3, 29, 141, 51, 5, 7, 8, 15, 4, 7, 15, 5, 3)
+%length(x1)
+%length(x2)
+%mean(x1)
+%mean(x2)
+%sd(x1)
+%sd(x2)
+%
+%x_min = min(c(x1, x2))
+%x_max = max(c(x1, x2))
+%range_min = -5
+%range_max = 450
+%
+%x_RES = 0.1
+%x_grid = seq(from = range_min, to = range_max, by = x_RES)
+%Fhathat_x_1 = ecdf(x1)(x_grid)
+%Fhathat_x_2 = ecdf(x2)(x_grid)
+%abs_diff = abs(Fhathat_x_1 - Fhathat_x_2)
+%max(abs_diff)
+%
+%illustration_data = data.frame(
+%  x = x_grid, 
+%  Fhathat_x_1 = Fhathat_x_1, 
+%  Fhathat_x_2 = Fhathat_x_2, 
+%  abs_diff = abs_diff)
+%ggplot(illustration_data) + 
+%  geom_point(aes(x = x, y = Fhathat_x_1), shape=1) + 
+%  geom_point(aes(x = x, y = Fhathat_x_2), shape=4) + 
+%  scale_y_continuous(breaks=seq(0,1,by=0.1)) +
+%  ylab("empirical CDF value")
+
+
+\beqn
+&&n_1 = 51, ~\xbar_1 = 49.8, ~s^2_1 = 104.83^2 \\
+&&n_2 = 21, ~\xbar_2 = 16.7, ~s^2_2 = 30.70^2 \\
+\eeqn
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{4} To test difference in population means, would a 2-sample t-test be appropriate? Explain in English why or why not.\spc{2}
+
+
+\subquestionwithpoints{6}  Regardless of whether it is appropriate or not, use an $F$-test to attempt to prove the variances are unequal i.e. $H_a: \sigsq_1 \neq \sigsq_2$ at $\alpha = 5\%$. The relevant values you need are $F_W(0.502) = 2.5\%$ and $F_W(2.25) = 97.5\%$ where $W \sim F_{50,20}$. Indicate the RET region, the decision and write a concluding sentence.\spc{5}
+
+\subquestionwithpoints{8} Regardless of whether it is appropriate or not, run a 2-sample t-test of a difference in means, i.e. $H_a: \theta_1 \neq \theta_2$, assuming equal variance at $\alpha = 5\%$. The relevant t-value is $t_{n_1 + n_2 - 2, 1 - \alpha/2} = t_{70, 97.5\%} = 1.99$. Indicate the decision and write a concluding sentence. \spc{6}
+
+\subquestionwithpoints{6} Assume the answer to (a) was \qu{no}, run an asymptotically valid test of a difference in means, i.e. $H_a: \theta_1 \neq \theta_2$, at $\alpha = 5\%$. Calculate the test statistic, provide the RET region, indicate the decision and write a concluding sentence.\spc{4.5}
+
+\subquestionwithpoints{10} This test can also be accomplished with a 2-sample Kolmogorov-Smirnov (KS) test albeit less-powerfully as the KS test looks for any difference in the two distributions (not only the mean). Below is a plot of $\hat{F}(x)$ for both populations. Population 1 is plotted as \qu{o} and population 2 as \qu{x}.
+
+\vspace{-0.5cm}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=6in]{empirical_cdfs}
+\end{figure}
+\vspace{-0.5cm}
+
+Run the 2-sample KS test at $\alpha = 5\%$. Note that $F_K(1.359) = 95\%$ where $K \sim $ Kolmogorov dist. The alternative hypothesis is $H_a: \text{DGP}_1 \neq \text{DGP}_2$. Calculate the test statistic, provide the RET region, indicate and decision and write a concluding sentence.\spc{6}
+
+\end{enumerate}
+
+\problem Assume the following DGP:
+
+\beqn
+\Xoneton \iid \poisson{\theta_1} := \frac{\theta^x e^{-\theta}}{x!} \indic{x \in \naturals_0}
+\eeqn
+
+
+%\problem Assume you have data from two populations realized from the following DGPs:
+%
+%\beqn
+%&& X_{1,1}, X_{1,2}, \ldots, X_{1, n_1} \iid \poisson{\theta_1} := \frac{\theta_1^x e^{-\theta_1}}{x!} \indic{x \in \naturals_0} \\
+%&& X_{2,1}, X_{2,2}, \ldots, X_{2, n_2} \iid \poisson{\theta_2} := \frac{\theta_2^x e^{-\theta_2}}{x!} \indic{x \in \naturals_0} 
+%\eeqn
+
+Here are some facts about this DGP from the previous midterm:
+
+\beqn
+\mathcal{L}(\theta; \Xoneton) &=& \frac{\theta^{\sum_{i=1}^n X_i} e^{-n\theta}}{\prod_{i=1}^n X_i!} \\
+\ell(\theta; \Xoneton) &=& \natlog{\theta} \sum_{i=1}^n X_i - n\theta - \sum_{i=1}^n \natlog{X_i!} \\
+s(\theta; \Xoneton) &=& \frac{\sum_{i=1}^n X_i}{\theta} - n = n\parens{\frac{\Xbar}{\theta} - 1} \\
+I_n(\theta) &=& \frac{n}{\theta}~~\Rightarrow~~I(\theta) = \frac{1}{\theta} \\
+\thetahatmle &=& \Xbar~~\text{and it is the UMVUE, i.e.}~~\var{\Xbar} = \text{CRLB} :=  \oneover{I_n(\theta)} = \overn{\theta}
+\eeqn
+\vspace{-0.75cm}
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{6} Provide the score test statistic for testing $H_a: \theta \neq \theta_0$. The statistic must be a function of $\Xoneton, n, \theta_0$ only.  \spc{5}
+
+\subquestionwithpoints{6} Provide the likelihood ratio test statistic $\hat{\Lambda} := 2\natlog{\hat{LR}}$ for testing $H_a: \theta \neq \theta_0$.  The statistic must be a function of $\Xoneton, n, \theta_0$ only.\spc{5}
+
+
+\subquestionwithpoints{6} Consider the reparameterization of $\phi = \sqrt{\theta}$. Provide an asymptotically normal test statistic for testing $H_a: \phi \neq \phi_0$.  The statistic must be a function of $\Xoneton, n, \theta_0$ only.\spc{3}
+
+
+For the rest of this problem, consider the prepandemic LIRR delay data where $n=51$ and $\xbar = 49.8$.
+
+\subquestionwithpoints{6} Use the likelihood ratio test to test if $H_a: \theta \neq 35$. Indicate the RET region and the decision.\spc{6}
+
+\subquestionwithpoints{6} Create a 95\% confidence interval estimate for $\phi = \sqrt{\theta}$.\spc{6}
+
+\end{enumerate}
+
+\problem We seek to test if hair length and eye color of cats are dependent. Here is a sample of cats organized into a contingency table with rowsums and colsums supplied:
+
+\begin{table}[htp]
+\centering
+\begin{tabular}{c|ccc|c}
+                & Blue Eyes & Yellow Eyes & Green Eyes & Total \\ \hline
+Short Hair  & 25           & 48              &  13             & 86 \\
+Long Hair   & 8            & 32              &  24             & 64 \\ \hline
+Total         & 33           & 80              &  37             & 150 \\ 
+\end{tabular}
+\end{table}
+
+Let $\theta_{i,j}$ denote the joint probability of having hair length of row $i$ and eye color of column $j$. Let $\theta_{i \cdot}$ denote the marginal probability of having hair length of row $i$. Let $\theta_{\cdot j}$ denote the marginal probability of having eye color of column $j$. 
+
+Below are some 95\%iles of different chi-squared distributions by degrees of freedom.
+
+\begin{table}[htp]
+\centering
+\begin{tabular}{c|ccccccccccc}
+degrees of freedom &       1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+$x$ where $F_{\chi^2}(x) = .95$ & 3.84 & 5.99 & 7.81 & 9.49 & 11.07 & 12.59 & 14.07 & 15.51 & 16.92 & 18.31
+\end{tabular}
+\end{table}
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{4} Using the $\theta$ notation above, write the null and alternative hypotheses.\spc{3}
+
+\subquestionwithpoints{10} Run the test from part (a) at $\alpha = 5\%$. Indicate the decision.\spc{20}
+
+\end{enumerate}
+
+\problem In class we modeled the maximum daily wind speed at JFK in the year 2013 and thus $n = 365$ for our dataset $\x$. We fit seven different models to the data by computing the MLE's of all their parameters and calculated their AIC's below from lowest to highest left to right.
+
+\begin{table}[htp]
+\centering
+\begin{tabular}{c|ccccccccccc}
+distribution    &gamma    & logistic     & normal   & gumbel  & weibull  &  frechet & gompertz      & exponential \\ \hline \hline
+$k := \dime{\thetavec}$ & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 1 \\
+AIC  & 2262.6   & 2265.3     & 2289.4   & 2290.6   & 2300.2   & 2352.7  & 2404.5   & 2872.2 \\ \hline
+Normalized  \\
+Akaike \\
+Weight &    0.799  &  0.201  &  0.000  &  0.000 &   0.000  &  0.000  &  0.000  &  0.000 
+\end{tabular}
+\end{table}
+
+\begin{enumerate}[(a)]
+
+\subquestionwithpoints{4} Which DGP of the seven is the best fitting model and why?\spc{4}
+
+\subquestionwithpoints{4} Compute the corrected AIC for the best fitting model.\spc{3}
+
+\subquestionwithpoints{6} Compute $\ell(\thetahathatmle; \x)$ where the DGP is $\Xoneton \iid \exponential{\theta}$.\spc{20}
+
+
+\end{enumerate}
+
+
+
+\end{document}
