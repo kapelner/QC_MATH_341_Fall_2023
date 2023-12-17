@@ -59,7 +59,8 @@ This exam is 120 minutes (variable time per question) and closed-book. You are a
 \inred{
 By the CLT or MLE monster theorem, $\Xbar \approxdist \normnot{\theta}{\overn{\theta (1 - \theta)}}$.  Using this fact, 
 \beqn
-\thetahatmmse = \frac{\alpha + X}{\alpha + \beta + n} = \frac{\alpha}{\alpha + \beta + n} + \frac{n}{\alpha + \beta + n} \Xbar \approxdist \normnot{\frac{\alpha}{\alpha + \beta + n} + \theta}{\frac{n\theta (1 - \theta)}{(\alpha + \beta + n)^2}}
+\thetahatmmse &=& \frac{\alpha + X}{\alpha + \beta + n} = \frac{\alpha}{\alpha + \beta + n} + \frac{n}{\alpha + \beta + n} \Xbar \\
+&\approxdist& \normnot{\frac{\alpha}{\alpha + \beta + n} + \frac{n}{\alpha + \beta + n}\theta}{\frac{n\theta (1 - \theta)}{(\alpha + \beta + n)^2}}
 \eeqn
 }
 
@@ -70,8 +71,7 @@ By the CLT or MLE monster theorem, $\Xbar \approxdist \normnot{\theta}{\overn{\t
 \thetahatmap &=& \frac{\alpha + X - 1}{\alpha + \beta + n - 2} = \frac{\alpha - 1}{\alpha + \beta + n - 2} + \frac{n}{\alpha + \beta + n - 2} \Xbar \\
 \bias{\thetahatmap} &:=& \expe{\thetahatmap} - \theta = \expe{\frac{\alpha - 1}{\alpha + \beta + n - 2} + \frac{n}{\alpha + \beta + n - 2} \Xbar } - \theta \\
 &=& \frac{\alpha - 1}{\alpha + \beta + n - 2} + \frac{n}{\alpha + \beta + n - 2} \theta - \theta \\
-&=& \frac{\alpha - 1}{\alpha + \beta + n - 2} + \parens{\frac{n}{\alpha + \beta + n - 2} - 1} \theta\\
-&=& \frac{\alpha - 1 + \parens{\alpha + \beta - 2} \theta}{\alpha + \beta + n - 2}\\
+&=& \frac{\alpha - 1}{\alpha + \beta + n - 2} + \parens{\frac{n}{\alpha + \beta + n - 2} - 1} \theta =  \frac{\alpha - 1 + \parens{\alpha + \beta - 2} \theta}{\alpha + \beta + n - 2}\\
 \eeqn
 }
 
@@ -177,7 +177,7 @@ f(\theta\,|\,\X) = \gammanot{1 + \sum x_i}{n} = \gammanot{5755}{10}
 
 \inred{
 \beqn
-f(\theta\,|\,\X) &=& \gammanot{1 + \sum x_i}{n} = \gammanot{5754}{10} \\
+f(\theta\,|\,\X) &=& \gammanot{\sum x_i}{n} = \gammanot{5754}{10} \\
 CR_{\theta, 95\%} &=& \bracks{\text{qgamma}(0.05, 5754, 10), \text{qgamma}(0.95, 5754, 10)}
 \eeqn 
 }
@@ -224,7 +224,7 @@ f(\theta,\,\sigsq\,|\,\X) &=& \text{NormalInverseGamma}\parens{\xbar, n, \frac{n
 \beqn
 && H_a: \theta < 4~\Rightarrow~H_0: \theta \geq 4,\\
 f(\theta\,|\,\X) &=& T_{n-1}\parens{\xbar, \overn{s^2}} = T_{26}\parens{ 4.289, \frac{0.526}{27}}\\
-p_{val} &:=& \cprob{H_0}{X} = \cprob{\theta \geq 4}{X} = 1 - \text{pt.scaled}(26, 4.289, 0.0195) 
+p_{val} &:=& \cprob{H_0}{X} = \cprob{\theta \geq 4}{X} = 1 - \text{pt.scaled}(4, 26, 4.289, 0.0195) 
 \eeqn}
 
 \subquestionwithpoints{6} Find an expression for the probability that Chevron's next quarter's dividend will exceed 5\%. Use numerical values for parameters.
